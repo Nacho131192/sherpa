@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sherpa Programing — Opción A · Cumbre</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0C0D0C}
+a{color:#EEEAE2}a:hover{color:#FF5B23}
+.a-wrap{max-width:1280px;margin:0 auto;padding:0 48px;box-sizing:border-box}
+.a-disp{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-0.025em;line-height:.92;margin:0}
+.a-label{font-family:'Archivo',sans-serif;font-stretch:100%;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.a-btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:2px;font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;box-sizing:border-box;cursor:pointer;border:0;transition:background-color .2s ease,color .2s ease}
+.a-btn-p{background:#FF5B23;color:#0C0D0C}.a-btn-p:hover{background:#EEEAE2;color:#0C0D0C}
+.a-btn-g{background:transparent;color:#EEEAE2;border:1px solid rgba(238,234,226,.35)}.a-btn-g:hover{border-color:#EEEAE2;color:#EEEAE2}
+.a-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;background:#171917;border:1px solid rgba(238,234,226,.08);color:#8E8E86;font-size:12px;letter-spacing:.08em;text-transform:uppercase;box-sizing:border-box;padding:24px}
+.a-row:hover .a-row-n{color:#FF5B23}
+.a-field{display:flex;flex-direction:column;gap:8px}
+.a-field label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#A8A8A0}
+.a-field input,.a-field select{height:52px;background:#0C0D0C;border:1px solid rgba(238,234,226,.2);color:#EEEAE2;padding:0 16px;font:inherit;font-size:15px;border-radius:2px}
+.a-field input:focus,.a-field select:focus,.a-btn:focus-visible,button:focus-visible{outline:2px solid #FF5B23;outline-offset:2px}
+@media (max-width:960px){
+.a-wrap{padding:0 20px}
+.a-nav-links{display:none!important}
+.a-g2,.a-g3,.a-g4,.a-g5,.a-hero{grid-template-columns:minmax(0,1fr)!important}
+.a-sec{padding-top:72px!important;padding-bottom:72px!important}
+.a-row{grid-template-columns:48px minmax(0,1fr)!important}
+.a-row-x{display:none!important}
+}
+</style>
+</helmet>
+<div style="font-family: 'Inter', system-ui, sans-serif; color: #EEEAE2; background: #0C0D0C; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; position: relative">
+
+<!-- NAV -->
+<header style="position: sticky; top: 0; z-index: 20; background: #0C0D0C; border-bottom: 1px solid rgba(238,234,226,.08)">
+<div class="a-wrap" style="display: flex; align-items: center; justify-content: space-between; height: 80px; gap: 24px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #EEEAE2" aria-label="Sherpa Programing, inicio">
+<svg width="30" height="22" viewBox="0 0 30 22" aria-hidden="true"><path d="M1 21 L11 4 L16 12 L20 7 L29 21 Z" fill="none" stroke="#FF5B23" stroke-width="2" stroke-linejoin="round"></path></svg>
+<span style="display: flex; flex-direction: column; line-height: 1">
+<span style="font-family: 'Archivo', sans-serif; font-stretch: 125%; font-weight: 900; font-size: 20px; letter-spacing: .02em">SHERPA</span>
+<span style="font-family: 'Archivo', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: .42em; color: #A8A8A0; margin-top: 4px">PROGRAMING</span>
+</span>
+</a>
+<nav class="a-nav-links" style="display: flex; gap: 32px; font-size: 14px" aria-label="Principal">
+<a href="#metodo" style="text-decoration: none">Método</a>
+<a href="#servicios" style="text-decoration: none">Servicios</a>
+<a href="#mama" style="text-decoration: none">Mamá Sherpa</a>
+<a href="#horarios" style="text-decoration: none">Horarios</a>
+<a href="#tarifas" style="text-decoration: none">Tarifas</a>
+<a href="#faq" style="text-decoration: none">FAQ</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 20px">
+<a href="#" class="a-nav-links" style="font-size: 14px; text-decoration: none; color: #A8A8A0">Acceso socios</a>
+<a href="#contacto" class="a-btn a-btn-p" style="min-height: 44px; padding: 0 20px">Clase de prueba</a>
+</div>
+</div>
+</header>
+
+<!-- HERO -->
+<section id="top" style="border-bottom: 1px solid rgba(238,234,226,.08)">
+<div class="a-wrap a-hero" style="display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 56px; align-items: end; padding-top: 88px; padding-bottom: 72px">
+<div style="display: flex; flex-direction: column; gap: 36px">
+<div class="a-label" style="color: #FF5B23; display: flex; align-items: center; gap: 12px"><span style="width: 32px; height: 1px; background: #FF5B23"></span>CrossFit · Entrenamiento personal · Embarazo y postparto</div>
+<h1 class="a-disp" style="font-size: clamp(56px, 8.4vw, 132px)">Nadie llega a la cima solo.</h1>
+<p style="margin: 0; max-width: 560px; font-size: 19px; line-height: 1.6; color: #C9C6BE">Un sherpa no sube por ti: conoce la ruta, marca el ritmo y sabe cuándo apretar. Programamos cada sesión para que progreses con técnica, con cabeza y con un coach a tu lado.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#contacto" class="a-btn a-btn-p">Reserva tu clase gratis
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#horarios" class="a-btn a-btn-g">Ver horarios</a>
+</div>
+<div class="a-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; border-top: 1px solid rgba(238,234,226,.12); padding-top: 24px; max-width: 640px">
+<div><div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 22px">[Máx. 12]</div><div style="font-size: 13px; color: #A8A8A0">personas por clase</div></div>
+<div><div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 22px">0 €</div><div style="font-size: 13px; color: #A8A8A0">primera clase de prueba</div></div>
+<div><div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 22px">Sin permanencia</div><div style="font-size: 13px; color: #A8A8A0">te quedas porque quieres</div></div>
+</div>
+</div>
+<div style="position: relative">
+<div class="a-ph" style="aspect-ratio: 4 / 5; width: 100%">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="1"></rect><circle cx="12" cy="13" r="3.5"></circle><path d="M8 6l1.5-2h5L16 6"></path></svg>
+<span>Vídeo hero en bucle · WOD 7:00 h<br>luz lateral, cámara lenta, grano</span>
+</div>
+<div style="position: absolute; left: -1px; bottom: -1px; background: #FF5B23; color: #0C0D0C; padding: 14px 18px; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .12em">▲ 8.848 m · LA CIMA ES TUYA</div>
+</div>
+</div>
+</section>
+
+<!-- STRIP -->
+<div style="border-bottom: 1px solid rgba(238,234,226,.08); overflow: hidden">
+<div class="a-wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; padding-top: 26px; padding-bottom: 26px; font-family: 'Archivo', sans-serif; font-stretch: 125%; font-weight: 800; font-size: 18px; letter-spacing: .04em; color: #6F6F68">
+<span>TÉCNICA</span><span style="color: #FF5B23">▲</span><span>PROGRAMACIÓN</span><span style="color: #FF5B23">▲</span><span>COMUNIDAD</span><span style="color: #FF5B23">▲</span><span>ACOMPAÑAMIENTO</span><span style="color: #FF5B23">▲</span><span>CONSTANCIA</span>
+</div>
+</div>
+
+<!-- IDENTIDAD -->
+<section id="metodo" class="a-sec" style="padding-top: 128px; padding-bottom: 128px">
+<div class="a-wrap">
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 40px">01 — Campo base · Quiénes somos</div>
+<div class="a-g2" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 72px">
+<p style="margin: 0; font-family: 'Archivo', sans-serif; font-stretch: 112%; font-weight: 500; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.18; letter-spacing: -0.015em">No somos un gimnasio donde vienes a sudar. Somos <span style="color: #FF5B23">tu guía</span> para llegar más lejos de lo que creías: un programa pensado, un equipo que te conoce por tu nombre y una tribu que te espera cada mañana.</p>
+<div style="display: flex; flex-direction: column">
+<div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; padding: 24px 0; border-top: 1px solid rgba(238,234,226,.12)">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #FF5B23">01</span>
+<div><div style="font-weight: 600; font-size: 18px; margin-bottom: 6px">Guía</div><div style="color: #A8A8A0; font-size: 15px">Cada clase con coach. Escalamos cada movimiento a tu nivel real, no al de la pizarra.</div></div>
+</div>
+<div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; padding: 24px 0; border-top: 1px solid rgba(238,234,226,.12)">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #FF5B23">02</span>
+<div><div style="font-weight: 600; font-size: 18px; margin-bottom: 6px">Programa</div><div style="color: #A8A8A0; font-size: 15px">Ciclos planificados con objetivos y tests. Nada de WODs al azar: cada día tiene un porqué.</div></div>
+</div>
+<div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; padding: 24px 0; border-top: 1px solid rgba(238,234,226,.12); border-bottom: 1px solid rgba(238,234,226,.12)">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #FF5B23">03</span>
+<div><div style="font-weight: 600; font-size: 18px; margin-bottom: 6px">Tribu</div><div style="color: #A8A8A0; font-size: 15px">De la primera clase a tu primer muscle-up, o de tu embarazo a volver a la barra: nadie entrena solo.</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- DIFERENCIALES -->
+<section class="a-sec" style="padding-top: 0; padding-bottom: 128px">
+<div class="a-wrap">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 48px">
+<div>
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">02 — 2.000 m · Lo que nos diferencia</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Por qué Sherpa</h2>
+</div>
+<p style="margin: 0; max-width: 380px; color: #A8A8A0">Cuatro compromisos que puedes exigirnos desde el primer día.</p>
+</div>
+<div class="a-g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: rgba(238,234,226,.1); border: 1px solid rgba(238,234,226,.1)">
+<div style="background: #0C0D0C; padding: 36px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 300px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5B23" stroke-width="1.5" aria-hidden="true"><path d="M4 19h16M6 15l4-5 3 3 5-7"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Programación propia por ciclos</h3>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">Bloques de [6–8] semanas con objetivos claros y tests de entrada y salida para medir tu progreso.</p>
+</div>
+<div style="background: #0C0D0C; padding: 36px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 300px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5B23" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.5 1-4.5 3-5.2"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Grupos reducidos, coach encima</h3>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">[Máx. 12] personas por clase. Corrección técnica real, no un cronómetro en la pared.</p>
+</div>
+<div style="background: #0C0D0C; padding: 36px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 300px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5B23" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Especialistas en embarazo y postparto</h3>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">Una ruta completa: entrenamiento prenatal, hipnoparto y recuperación postparto con trabajo de suelo pélvico.</p>
+</div>
+<div style="background: #0C0D0C; padding: 36px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 300px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5B23" stroke-width="1.5" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1"></rect><path d="M8 14l3 3 5-7"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Seguimiento que se mide</h3>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">Valoración inicial, registro de marcas en la app y revisión con tu coach cada [trimestre].</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="a-sec" style="padding-top: 128px; padding-bottom: 128px; background: #121412; border-top: 1px solid rgba(238,234,226,.08); border-bottom: 1px solid rgba(238,234,226,.08)">
+<div class="a-wrap">
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">03 — 4.000 m · Servicios</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px); margin-bottom: 56px">Elige tu ruta</h2>
+<div style="border-top: 1px solid rgba(238,234,226,.14)">
+<a href="#tarifas" class="a-row" style="display: grid; grid-template-columns: 80px minmax(0, 1.2fr) minmax(0, 1.4fr) 180px; gap: 32px; align-items: center; padding: 32px 0; border-bottom: 1px solid rgba(238,234,226,.14); text-decoration: none; color: #EEEAE2">
+<span class="a-row-n" style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 14px; color: #6F6F68; transition: color .2s ease">01</span>
+<span class="a-disp" style="font-size: clamp(28px, 3vw, 44px)">CrossFit</span>
+<span style="color: #A8A8A0; font-size: 15px">Clases de 60 min: calentamiento, técnica, fuerza y WOD. Escalado para todos los niveles, desde tu primer día.</span>
+<span class="a-row-x a-ph" style="height: 110px; padding: 8px; font-size: 10px">Foto · barra olímpica</span>
+</a>
+<a href="#tarifas" class="a-row" style="display: grid; grid-template-columns: 80px minmax(0, 1.2fr) minmax(0, 1.4fr) 180px; gap: 32px; align-items: center; padding: 32px 0; border-bottom: 1px solid rgba(238,234,226,.14); text-decoration: none; color: #EEEAE2">
+<span class="a-row-n" style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 14px; color: #6F6F68; transition: color .2s ease">02</span>
+<span class="a-disp" style="font-size: clamp(28px, 3vw, 44px)">Entrenamiento personal</span>
+<span style="color: #A8A8A0; font-size: 15px">Sesiones 1:1 o en pareja con un plan hecho para ti: objetivos de rendimiento, pérdida de grasa o readaptación.</span>
+<span class="a-row-x a-ph" style="height: 110px; padding: 8px; font-size: 10px">Foto · coach 1:1</span>
+</a>
+<a href="#mama" class="a-row" style="display: grid; grid-template-columns: 80px minmax(0, 1.2fr) minmax(0, 1.4fr) 180px; gap: 32px; align-items: center; padding: 32px 0; border-bottom: 1px solid rgba(238,234,226,.14); text-decoration: none; color: #EEEAE2">
+<span class="a-row-n" style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 14px; color: #6F6F68; transition: color .2s ease">03</span>
+<span class="a-disp" style="font-size: clamp(28px, 3vw, 44px)">Embarazo activo</span>
+<span style="color: #A8A8A0; font-size: 15px">Fuerza, movilidad y respiración adaptadas a cada trimestre, en grupos pequeños y con autorización de tu matrona.</span>
+<span class="a-row-x a-ph" style="height: 110px; padding: 8px; font-size: 10px">Foto · clase prenatal</span>
+</a>
+<a href="#mama" class="a-row" style="display: grid; grid-template-columns: 80px minmax(0, 1.2fr) minmax(0, 1.4fr) 180px; gap: 32px; align-items: center; padding: 32px 0; border-bottom: 1px solid rgba(238,234,226,.14); text-decoration: none; color: #EEEAE2">
+<span class="a-row-n" style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 14px; color: #6F6F68; transition: color .2s ease">04</span>
+<span class="a-disp" style="font-size: clamp(28px, 3vw, 44px)">Hipnoparto</span>
+<span style="color: #A8A8A0; font-size: 15px">Curso de preparación al parto con técnicas de relajación, respiración y visualización. Para ti y tu acompañante.</span>
+<span class="a-row-x a-ph" style="height: 110px; padding: 8px; font-size: 10px">Foto · sesión en pareja</span>
+</a>
+<a href="#mama" class="a-row" style="display: grid; grid-template-columns: 80px minmax(0, 1.2fr) minmax(0, 1.4fr) 180px; gap: 32px; align-items: center; padding: 32px 0; border-bottom: 1px solid rgba(238,234,226,.14); text-decoration: none; color: #EEEAE2">
+<span class="a-row-n" style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 14px; color: #6F6F68; transition: color .2s ease">05</span>
+<span class="a-disp" style="font-size: clamp(28px, 3vw, 44px)">Postparto</span>
+<span style="color: #A8A8A0; font-size: 15px">Recuperación de core y suelo pélvico y vuelta progresiva al entreno. Puedes venir con tu bebé.</span>
+<span class="a-row-x a-ph" style="height: 110px; padding: 8px; font-size: 10px">Foto · mamá con bebé</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- MAMÁ SHERPA -->
+<section id="mama" class="a-sec" style="background: #EEEAE2; color: #141513; padding-top: 128px; padding-bottom: 128px">
+<div class="a-wrap">
+<div class="a-g2" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<div class="a-label" style="color: #8A3A14">04 — Programa Mamá Sherpa</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 4.6vw, 68px)">La ruta más importante de tu vida</h2>
+<p style="margin: 0; font-size: 18px; color: #3D3E3A">Te acompañamos antes, durante y después: un mismo equipo que conoce tu historia y adapta cada sesión a cómo llegas ese día.</p>
+<div class="a-ph" style="aspect-ratio: 4 / 3; background: #E0DBD1; border-color: rgba(20,21,19,.1); color: #5C5D58">Foto · luz natural, tonos cálidos<br>embarazada entrenando con coach</div>
+</div>
+<div style="display: flex; flex-direction: column">
+<div style="display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; padding: 32px 0; border-top: 1px solid rgba(20,21,19,.16)">
+<div style="width: 56px; height: 56px; border-radius: 50%; border: 1px solid #141513; display: flex; align-items: center; justify-content: center; font-family: 'Archivo', sans-serif; font-weight: 800">1</div>
+<div>
+<div class="a-label" style="color: #5C5D58; margin-bottom: 8px">Durante el embarazo</div>
+<h3 style="margin: 0 0 10px; font-family: 'Archivo', sans-serif; font-stretch: 112%; font-size: 28px; font-weight: 700">Embarazo activo</h3>
+<p style="margin: 0; color: #3D3E3A">Desde la semana [12] y con autorización médica. Fuerza, movilidad, respiración y suelo pélvico, adaptados a cada trimestre.</p>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; padding: 32px 0; border-top: 1px solid rgba(20,21,19,.16)">
+<div style="width: 56px; height: 56px; border-radius: 50%; border: 1px solid #141513; display: flex; align-items: center; justify-content: center; font-family: 'Archivo', sans-serif; font-weight: 800">2</div>
+<div>
+<div class="a-label" style="color: #5C5D58; margin-bottom: 8px">Preparando el parto</div>
+<h3 style="margin: 0 0 10px; font-family: 'Archivo', sans-serif; font-stretch: 112%; font-size: 28px; font-weight: 700">Hipnoparto</h3>
+<p style="margin: 0; color: #3D3E3A">Curso de [X] sesiones en grupo reducido. Relajación profunda, respiración y herramientas para vivir el parto con calma, junto a tu acompañante.</p>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; padding: 32px 0; border-top: 1px solid rgba(20,21,19,.16); border-bottom: 1px solid rgba(20,21,19,.16)">
+<div style="width: 56px; height: 56px; border-radius: 50%; background: #141513; color: #EEEAE2; display: flex; align-items: center; justify-content: center; font-family: 'Archivo', sans-serif; font-weight: 800">3</div>
+<div>
+<div class="a-label" style="color: #5C5D58; margin-bottom: 8px">Después del parto</div>
+<h3 style="margin: 0 0 10px; font-family: 'Archivo', sans-serif; font-stretch: 112%; font-size: 28px; font-weight: 700">Postparto y vuelta al box</h3>
+<p style="margin: 0; color: #3D3E3A">Tras el alta y la valoración de suelo pélvico. Recuperación de core, fuerza progresiva y, cuando estés lista, de vuelta a las clases de CrossFit.</p>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
+<a href="#contacto" class="a-btn" style="background: #141513; color: #EEEAE2">Habla con nuestra especialista</a>
+<a href="#tarifas" class="a-btn" style="background: transparent; color: #141513; border: 1px solid rgba(20,21,19,.4)">Ver bonos</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PRIMERA VEZ -->
+<section class="a-sec" style="padding-top: 128px; padding-bottom: 128px">
+<div class="a-wrap">
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">05 — 6.000 m · Tu primera vez</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px); margin-bottom: 56px">Empezar es fácil</h2>
+<div class="a-g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #FF5B23; padding-top: 24px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 48px; line-height: 1; color: #FF5B23">1</span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Reserva tu clase gratis</h3>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">Elige día y hora. Te escribimos por WhatsApp para confirmar.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid rgba(238,234,226,.2); padding-top: 24px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 48px; line-height: 1">2</span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Valoración inicial</h3>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">20 minutos con un coach: historial, objetivos y movilidad.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid rgba(238,234,226,.2); padding-top: 24px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 48px; line-height: 1">3</span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Fundamentos</h3>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">[X] sesiones de técnica para aprender los movimientos base con seguridad.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid rgba(238,234,226,.2); padding-top: 24px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 48px; line-height: 1">4</span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Bienvenido a la tribu</h3>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">Te unes a las clases de grupo y reservas desde la app.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- HORARIOS -->
+<section id="horarios" class="a-sec" style="padding-top: 128px; padding-bottom: 128px; background: #121412; border-top: 1px solid rgba(238,234,226,.08); border-bottom: 1px solid rgba(238,234,226,.08)">
+<div class="a-wrap">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px">
+<div>
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">06 — Horarios</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Tu hora, tu clase</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; color: #A8A8A0">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: #FF5B23"></span>CrossFit</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: #E6C9A8"></span>Mamá Sherpa</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: #8E8E86"></span>Open Box</span>
+</div>
+</div>
+<div class="a-g2" style="display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 40px; align-items: start">
+<div>
+<div role="tablist" aria-label="Día de la semana" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px">
+<sc-for list="{{days}}" as="d" hint-placeholder-count="6">
+<button type="button" role="tab" aria-selected="{{d.sel}}" onClick="{{d.pick}}" style="{{d.style}}">{{d.label}}</button>
+</sc-for>
+</div>
+<div style="border-top: 1px solid rgba(238,234,226,.14)">
+<sc-for list="{{sessions}}" as="s" hint-placeholder-count="8">
+<div style="display: grid; grid-template-columns: 96px 12px minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 18px 4px; border-bottom: 1px solid rgba(238,234,226,.1)">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 20px; font-variant-numeric: tabular-nums">{{s.h}}</span>
+<span style="{{s.dot}}"></span>
+<span><span style="font-weight: 600">{{s.n}}</span><span style="color: #A8A8A0; font-size: 14px"> · {{s.note}}</span></span>
+<span style="font-size: 13px; color: #A8A8A0">{{s.d}}</span>
+</div>
+</sc-for>
+</div>
+<p style="margin: 16px 0 0; font-size: 13px; color: #8E8E86">Horario orientativo de maqueta — sustituir por el horario real del box.</p>
+</div>
+<aside style="background: #0C0D0C; border: 1px solid rgba(238,234,226,.12); padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5B23" stroke-width="1.5" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M10 18h4"></path></svg>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600">Reserva desde la app</h3>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">Apúntate a tu clase, consulta el WOD del día y registra tus marcas desde [AimHarder / WodBuster].</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #C9C6BE">
+<li>— Reserva hasta [7 días] antes</li>
+<li>— Cancela sin coste hasta [2 h] antes</li>
+<li>— Entrenamiento personal: con cita previa</li>
+</ul>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<a href="#" class="a-btn a-btn-g" style="min-height: 44px; padding: 0 16px; font-size: 12px">App Store</a>
+<a href="#" class="a-btn a-btn-g" style="min-height: 44px; padding: 0 16px; font-size: 12px">Google Play</a>
+</div>
+</aside>
+</div>
+</div>
+</section>
+
+<!-- TARIFAS -->
+<section id="tarifas" class="a-sec" style="padding-top: 128px; padding-bottom: 128px">
+<div class="a-wrap">
+<div style="text-align: center; margin-bottom: 56px; display: flex; flex-direction: column; align-items: center; gap: 20px">
+<div class="a-label" style="color: #A8A8A0">07 — 8.000 m · Tarifas</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Precios claros. Sin permanencia.</h2>
+<p style="margin: 0; color: #A8A8A0; max-width: 560px">Lo que ves es lo que pagas. Cuota mensual domiciliada, cancelas cuando quieras con [15 días] de preaviso.</p>
+</div>
+<div class="a-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch">
+<div style="border: 1px solid rgba(238,234,226,.14); padding: 40px 32px; display: flex; flex-direction: column; gap: 24px">
+<div class="a-label" style="color: #A8A8A0">CrossFit</div>
+<h3 class="a-disp" style="font-size: 32px">2 días</h3>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">[XX] €</span><span style="color: #A8A8A0">/mes</span></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #C9C6BE; flex-grow: 1">
+<li>✓ 8 clases al mes</li><li>✓ Reserva en app</li><li>✓ Valoración inicial</li>
+</ul>
+<a href="#contacto" class="a-btn a-btn-g" style="justify-content: center">Empezar</a>
+</div>
+<div style="border: 1px solid #FF5B23; background: #161310; padding: 40px 32px; display: flex; flex-direction: column; gap: 24px; position: relative">
+<div style="position: absolute; top: -1px; right: -1px; background: #FF5B23; color: #0C0D0C; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: .14em; padding: 8px 12px">RECOMENDADA</div>
+<div class="a-label" style="color: #FF5B23">CrossFit</div>
+<h3 class="a-disp" style="font-size: 32px">3 días</h3>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">[XX] €</span><span style="color: #A8A8A0">/mes</span></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #C9C6BE; flex-grow: 1">
+<li>✓ 12 clases al mes</li><li>✓ Reserva en app</li><li>✓ Valoración y revisión trimestral</li><li>✓ Acceso a Open Box</li>
+</ul>
+<a href="#contacto" class="a-btn a-btn-p" style="justify-content: center">Empezar</a>
+</div>
+<div style="border: 1px solid rgba(238,234,226,.14); padding: 40px 32px; display: flex; flex-direction: column; gap: 24px">
+<div class="a-label" style="color: #A8A8A0">CrossFit</div>
+<h3 class="a-disp" style="font-size: 32px">Ilimitado</h3>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">[XX] €</span><span style="color: #A8A8A0">/mes</span></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #C9C6BE; flex-grow: 1">
+<li>✓ Clases ilimitadas</li><li>✓ Open Box sin límite</li><li>✓ Revisión trimestral</li><li>✓ [1] sesión personal al trimestre</li>
+</ul>
+<a href="#contacto" class="a-btn a-btn-g" style="justify-content: center">Empezar</a>
+</div>
+</div>
+<div class="a-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(238,234,226,.12); border: 1px solid rgba(238,234,226,.12); margin-top: 20px">
+<div style="background: #0C0D0C; padding: 28px 32px">
+<div style="font-weight: 600; margin-bottom: 12px">Entrenamiento personal</div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Sesión suelta</span><span>[XX] €</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Bono 5 sesiones</span><span>[XX] €</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Bono 10 sesiones</span><span>[XX] €</span></div>
+</div>
+<div style="background: #0C0D0C; padding: 28px 32px">
+<div style="font-weight: 600; margin-bottom: 12px">Mamá Sherpa</div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Embarazo · 2 días/sem</span><span>[XX] €/mes</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Postparto · 2 días/sem</span><span>[XX] €/mes</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Curso hipnoparto</span><span>[XX] €</span></div>
+</div>
+<div style="background: #0C0D0C; padding: 28px 32px">
+<div style="font-weight: 600; margin-bottom: 12px">Otros</div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Matrícula</span><span>[XX] €</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Clase suelta</span><span>[XX] €</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Drop-in visitantes</span><span>[XX] €</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- EQUIPO + OPINIONES -->
+<section class="a-sec" style="padding-top: 128px; padding-bottom: 128px; background: #121412; border-top: 1px solid rgba(238,234,226,.08)">
+<div class="a-wrap">
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">08 — Tus guías</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px); margin-bottom: 56px">El equipo</h2>
+<div class="a-g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 14px"><div class="a-ph" style="aspect-ratio: 3 / 4">Retrato coach<br>fondo neutro, B/N</div><div><div style="font-weight: 600">[Nombre Apellido]</div><div style="font-size: 14px; color: #A8A8A0">Head Coach · [CF-L2]</div></div></div>
+<div style="display: flex; flex-direction: column; gap: 14px"><div class="a-ph" style="aspect-ratio: 3 / 4">Retrato coach<br>fondo neutro, B/N</div><div><div style="font-weight: 600">[Nombre Apellido]</div><div style="font-size: 14px; color: #A8A8A0">Coach · Entrenamiento personal</div></div></div>
+<div style="display: flex; flex-direction: column; gap: 14px"><div class="a-ph" style="aspect-ratio: 3 / 4">Retrato coach<br>fondo neutro, B/N</div><div><div style="font-weight: 600">[Nombre Apellido]</div><div style="font-size: 14px; color: #A8A8A0">Especialista pre y postparto</div></div></div>
+<div style="display: flex; flex-direction: column; gap: 14px"><div class="a-ph" style="aspect-ratio: 3 / 4">Retrato coach<br>fondo neutro, B/N</div><div><div style="font-weight: 600">[Nombre Apellido]</div><div style="font-size: 14px; color: #A8A8A0">Instructora de hipnoparto</div></div></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; margin-top: 112px; margin-bottom: 40px">
+<h2 class="a-disp" style="font-size: clamp(32px, 3.6vw, 52px)">Lo dice la tribu</h2>
+<div style="display: flex; align-items: center; gap: 12px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 40px">[4,9]</span><span style="color: #FF5B23; letter-spacing: 2px" aria-hidden="true">★★★★★</span><span style="font-size: 14px; color: #A8A8A0">[000] reseñas en Google</span></div>
+</div>
+<div class="a-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<figure style="margin: 0; border: 1px solid rgba(238,234,226,.12); padding: 32px; display: flex; flex-direction: column; gap: 24px; justify-content: space-between">
+<blockquote style="margin: 0; font-size: 18px; line-height: 1.5">“[Reseña real de Google de un socio de CrossFit — dos o tres líneas sobre el trato y el progreso.]”</blockquote>
+<figcaption style="font-size: 14px; color: #A8A8A0">[Nombre] · Socio desde [año]</figcaption>
+</figure>
+<figure style="margin: 0; border: 1px solid rgba(238,234,226,.12); padding: 32px; display: flex; flex-direction: column; gap: 24px; justify-content: space-between">
+<blockquote style="margin: 0; font-size: 18px; line-height: 1.5">“[Reseña real de una alumna de embarazo o postparto — cómo se sintió acompañada.]”</blockquote>
+<figcaption style="font-size: 14px; color: #A8A8A0">[Nombre] · Mamá Sherpa</figcaption>
+</figure>
+<figure style="margin: 0; border: 1px solid rgba(238,234,226,.12); padding: 32px; display: flex; flex-direction: column; gap: 24px; justify-content: space-between">
+<blockquote style="margin: 0; font-size: 18px; line-height: 1.5">“[Reseña real de un cliente de entrenamiento personal — objetivo conseguido.]”</blockquote>
+<figcaption style="font-size: 14px; color: #A8A8A0">[Nombre] · Entrenamiento personal</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="a-sec" style="padding-top: 128px; padding-bottom: 128px; border-top: 1px solid rgba(238,234,226,.08)">
+<div class="a-wrap a-g2" style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 72px">
+<div>
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">09 — Dudas</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Preguntas frecuentes</h2>
+</div>
+<div style="border-top: 1px solid rgba(238,234,226,.14)">
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="6">
+<div style="border-bottom: 1px solid rgba(238,234,226,.14)">
+<button type="button" onClick="{{f.toggle}}" aria-expanded="{{f.open}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 24px; background: none; border: 0; color: #EEEAE2; font: inherit; font-size: 18px; font-weight: 500; text-align: left; padding: 24px 0; cursor: pointer; min-height: 44px">
+<span>{{f.q}}</span><span style="font-family: 'Archivo', sans-serif; font-size: 24px; color: #FF5B23; flex-shrink: 0">{{f.sign}}</span>
+</button>
+<sc-if value="{{f.open}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; padding: 0 48px 24px 0; color: #A8A8A0">{{f.a}}</p>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- CTA + CONTACTO -->
+<section id="contacto" class="a-sec" style="padding-top: 128px; padding-bottom: 128px; background: #FF5B23; color: #0C0D0C">
+<div class="a-wrap a-g2" style="display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 72px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<h2 class="a-disp" style="font-size: clamp(48px, 6.4vw, 104px)">Tu primera clase va por nuestra cuenta.</h2>
+<p style="margin: 0; font-size: 18px; max-width: 480px">Déjanos tus datos y te escribimos en menos de 24 h para cerrar día y hora. Sin compromiso.</p>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px; border-top: 1px solid rgba(12,13,12,.3); padding-top: 24px">
+<span>[Calle, número] · [Ciudad]</span>
+<span>L–V [7:00–21:30] · S [9:30–13:00]</span>
+<span>[+34 600 000 000] · [hola@sherpaprograming.com]</span>
+</div>
+</div>
+<form style="background: #0C0D0C; color: #EEEAE2; padding: 40px; display: flex; flex-direction: column; gap: 20px">
+<div class="a-field"><label for="a-nombre">Nombre</label><input id="a-nombre" type="text" autocomplete="name"></div>
+<div class="a-field"><label for="a-tel">Teléfono</label><input id="a-tel" type="tel" autocomplete="tel" placeholder="600 000 000"></div>
+<div class="a-field"><label for="a-int">Me interesa</label>
+<select id="a-int"><option>CrossFit</option><option>Entrenamiento personal</option><option>Embarazo activo</option><option>Hipnoparto</option><option>Postparto</option></select></div>
+<button type="submit" class="a-btn a-btn-p" style="justify-content: center; margin-top: 8px">Reservar clase de prueba</button>
+<p style="margin: 0; font-size: 12px; color: #8E8E86">Al enviar aceptas la política de privacidad. Solo te contactaremos para tu clase.</p>
+</form>
+</div>
+</section>
+
+<!-- MAPA -->
+<div class="a-ph" style="height: 320px; border-left: 0; border-right: 0">Mapa · Google Maps embebido con la ubicación del box</div>
+
+<!-- FOOTER -->
+<footer style="padding: 64px 0 40px">
+<div class="a-wrap">
+<div class="a-g4" style="display: grid; grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(238,234,226,.1)">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Archivo', sans-serif; font-stretch: 125%; font-weight: 900; font-size: 28px">SHERPA</span>
+<span style="color: #A8A8A0; font-size: 14px; max-width: 280px">CrossFit, entrenamiento personal y programa Mamá Sherpa.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px"><span class="a-label" style="color: #8E8E86">Box</span><a href="#metodo" style="text-decoration: none">Método</a><a href="#servicios" style="text-decoration: none">Servicios</a><a href="#horarios" style="text-decoration: none">Horarios</a><a href="#tarifas" style="text-decoration: none">Tarifas</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px"><span class="a-label" style="color: #8E8E86">Síguenos</span><a href="#" style="text-decoration: none">Instagram</a><a href="#" style="text-decoration: none">TikTok</a><a href="#" style="text-decoration: none">YouTube</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px"><span class="a-label" style="color: #8E8E86">Legal</span><a href="#" style="text-decoration: none">Aviso legal</a><a href="#" style="text-decoration: none">Privacidad</a><a href="#" style="text-decoration: none">Cookies</a></div>
+</div>
+<div style="padding-top: 24px; font-size: 13px; color: #8E8E86">© 2026 Sherpa Programing</div>
+</div>
+</footer>
+
+<a href="#" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 24px; bottom: 24px; z-index: 30; width: 60px; height: 60px; border-radius: 50%; background: #EEEAE2; color: #0C0D0C; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.35)">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"></path></svg>
+</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":8000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var st = this.state || {};
+    var day = st.day == null ? 0 : st.day;
+    var faq = st.faq == null ? 0 : st.faq;
+    var self = this;
+    var C = { cf: "#FF5B23", mama: "#E6C9A8", open: "#8E8E86" };
+    var cf = function (h, note) { return { h: h, n: "CrossFit", note: note || "Técnica + WOD", d: "60 min", t: "cf" }; };
+    var week = [
+      [cf("07:00"), cf("08:00"), cf("09:30"), { h: "11:00", n: "Postparto", note: "Con bebé en sala", d: "50 min", t: "mama" }, cf("13:30"), cf("17:30"), cf("18:30"), cf("19:30"), cf("20:30")],
+      [cf("07:00"), cf("08:00"), cf("09:30"), { h: "10:30", n: "Embarazo activo", note: "Grupo reducido", d: "50 min", t: "mama" }, cf("13:30"), cf("17:30"), { h: "18:30", n: "Embarazo activo", note: "Grupo de tarde", d: "50 min", t: "mama" }, cf("19:30"), cf("20:30")],
+      [cf("07:00"), cf("08:00"), cf("09:30"), { h: "11:00", n: "Postparto", note: "Con bebé en sala", d: "50 min", t: "mama" }, cf("13:30"), cf("17:30"), cf("18:30"), cf("19:30"), cf("20:30")],
+      [cf("07:00"), cf("08:00"), cf("09:30"), { h: "10:30", n: "Embarazo activo", note: "Grupo reducido", d: "50 min", t: "mama" }, cf("13:30"), cf("17:30"), cf("18:30"), { h: "19:30", n: "Hipnoparto", note: "Curso · con acompañante", d: "90 min", t: "mama" }, cf("20:30")],
+      [cf("07:00"), cf("08:00"), cf("09:30"), cf("13:30"), cf("17:30"), cf("18:30"), { h: "19:30", n: "Open Box", note: "Entreno libre supervisado", d: "90 min", t: "open" }],
+      [cf("10:00", "Team WOD por parejas"), { h: "11:00", n: "Hipnoparto", note: "Curso · con acompañante", d: "90 min", t: "mama" }, { h: "11:30", n: "Open Box", note: "Entreno libre supervisado", d: "90 min", t: "open" }]
+    ];
+    var labels = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    var days = labels.map(function (l, i) {
+      var on = i === day;
+      return {
+        label: l,
+        sel: on ? "true" : "false",
+        pick: function () { self.setState({ day: i }); },
+        style: "min-height: 44px; padding: 0 20px; border-radius: 2px; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; " + (on ? "background: #FF5B23; color: #0C0D0C; border: 1px solid #FF5B23;" : "background: transparent; color: #EEEAE2; border: 1px solid rgba(238,234,226,.25);")
+      };
+    });
+    var sessions = week[day].map(function (s) {
+      return { h: s.h, n: s.n, note: s.note, d: s.d, dot: "width: 10px; height: 10px; display: block; background: " + C[s.t] + ";" };
+    });
+    var qs = [
+      ["¿Necesito experiencia previa para hacer CrossFit?", "No. Empiezas con una valoración y unas sesiones de fundamentos. Después, cada clase se escala a tu nivel: mismas ganas, distinta carga."],
+      ["¿Puedo entrenar estando embarazada?", "Sí, con la autorización de tu matrona o ginecólogo. Adaptamos cada sesión al trimestre y a cómo te encuentras ese día."],
+      ["¿Cuándo puedo empezar el postparto?", "Tras el alta médica y, idealmente, una valoración de suelo pélvico con fisioterapeuta. Te ayudamos a coordinarlo."],
+      ["¿Qué es el hipnoparto?", "Un método de preparación al parto basado en relajación, respiración y visualización para vivirlo con más calma y confianza."],
+      ["¿Hay permanencia o matrícula?", "No hay permanencia. La matrícula es de [XX] € e incluye la valoración inicial."],
+      ["¿Cómo reservo las clases?", "Desde la app [AimHarder / WodBuster]. Puedes reservar hasta [7 días] antes y cancelar sin coste hasta [2 h] antes."]
+    ];
+    var faqs = qs.map(function (q, i) {
+      var open = i === faq;
+      return { q: q[0], a: q[1], open: open, sign: open ? "−" : "+", toggle: function () { self.setState({ faq: open ? -1 : i }); } };
+    });
+    return { days: days, sessions: sessions, faqs: faqs };
+  }
+}
+</script>
+</body>
+</html>
