@@ -1,6 +1,6 @@
 # SHERPA PROGRAMING — Web
 
-Proyecto web del box de CrossFit SHERPA PROGRAMING (CrossFit, entrenamiento personal y programa Mamá Sherpa: embarazo, hipnoparto y postparto).
+Proyecto web del box SHERPA PROGRAMING (entrenamiento funcional, entrenamiento personal, nutrición y programa Mamá Sherpa: embarazo y postparto).
 
 ## Estado
 
