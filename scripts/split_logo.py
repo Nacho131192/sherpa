@@ -100,4 +100,4 @@ dropped = [d for d in drawings if id(d) not in used]
 print("dropped (franja inferior):", len(dropped), "rects:", [tuple(round(v) for v in d["rect"]) for d in dropped])
 
 build_svg(mountain, "sherpa-mountain")
-build_svg(letters + tagline, "sherpa-wordmark")
+build_svg(letters, "sherpa-wordmark")
