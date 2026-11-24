@@ -302,8 +302,8 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 .hz-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px}
 .hz-btn{min-height:44px;padding:0 16px;border-radius:2px;cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:#EEEAE2;border:1px solid rgba(238,234,226,.25)}
 .hz-btn[aria-pressed="true"]{background:#FEBD59;color:#0C0D0C;border-color:#FEBD59}
-.hz-scroll{overflow-x:auto;padding-bottom:8px}
-.hz-week{display:grid;grid-template-columns:72px repeat(7,minmax(0,116px));justify-content:center;gap:6px;min-width:940px}
+.hz-scroll{overflow-x:auto;padding-bottom:8px;max-width:100%}
+.hz-week{display:grid;grid-template-columns:72px repeat(7,minmax(0,116px));justify-content:center;gap:6px;min-width:940px;margin:0 auto}
 .hz-dayhead{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#A8A8A0;padding:0 4px 14px;border-bottom:1px solid rgba(238,234,226,.14)}
 .hz-time{font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;font-variant-numeric:tabular-nums;color:#EEEAE2;padding-top:9px}
 .hz-cell{min-height:40px;border-top:1px solid rgba(238,234,226,.06);padding-top:4px}
@@ -350,6 +350,9 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
       apply();
     });
   });
+  // En móvil el calendario es más ancho que la pantalla: que arranque centrado.
+  var sc = document.querySelector('.hz-scroll');
+  if (sc && sc.scrollWidth > sc.clientWidth) { sc.scrollLeft = (sc.scrollWidth - sc.clientWidth) / 2; }
 })();
 </script>
 
