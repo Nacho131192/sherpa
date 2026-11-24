@@ -298,6 +298,19 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 </section>
 
 <!-- HORARIOS -->
+<style>
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hz-btn{min-height:44px;padding:0 18px;border-radius:2px;cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:#EEEAE2;border:1px solid rgba(238,234,226,.25)}
+.hz-btn[aria-pressed="true"]{background:#FEBD59;color:#0C0D0C;border-color:#FEBD59}
+.hz-scroll{overflow-x:auto}
+.hz-table{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}
+.hz-table th,.hz-table td{padding:8px 6px;border-top:1px solid rgba(238,234,226,.1);vertical-align:top;text-align:left}
+.hz-table thead th{font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#A8A8A0;border-top:0;padding-bottom:14px}
+.hz-time{font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hz-cls{display:block;padding:8px 10px;line-height:1.3;border-left:3px solid #6F6F68;background:rgba(238,234,226,.04);transition:opacity .2s ease,background-color .2s ease}
+.hz-cls.is-active{background:#FEBD59;color:#0C0D0C;border-left-color:#0C0D0C}
+.hz-cls.is-dim{opacity:.25}
+</style>
 <section id="horarios" class="a-sec" style="padding-top: 128px; padding-bottom: 128px; background: #121412; border-top: 1px solid rgba(238,234,226,.08); border-bottom: 1px solid rgba(238,234,226,.08)">
 <div class="a-wrap">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px">
@@ -305,35 +318,19 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 <div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">07 — Horarios</div>
 <h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Tu hora, tu clase</h2>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; color: #A8A8A0">
-<span style="display: flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: #FEBD59"></span>Entrenamiento funcional</span>
-<span style="display: flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: #E6C9A8"></span>Mamá Sherpa</span>
-<span style="display: flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: #8E8E86"></span>Open Box</span>
+<p style="margin: 0; max-width: 380px; color: #A8A8A0">Horario de invierno. Pulsa una clase para ver dónde encaja en la semana.</p>
 </div>
+<div role="group" aria-label="Filtrar por clase" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px">
+<button type="button" class="hz-btn" data-filter="Funcional" aria-pressed="false">Funcional</button><button type="button" class="hz-btn" data-filter="Entrena con tu Amig@" aria-pressed="false">Entrena con tu Amig@</button><button type="button" class="hz-btn" data-filter="Kids" aria-pressed="false">Kids</button><button type="button" class="hz-btn" data-filter="Wom_Ray (embarazadas)" aria-pressed="false">Wom_Ray (embarazadas)</button>
 </div>
 <div class="a-g2" style="display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 40px; align-items: start">
 <div>
-<div role="tablist" aria-label="Día de la semana" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px">
-<sc-for list="{{days}}" as="d" hint-placeholder-count="6">
-<button type="button" role="tab" aria-selected="{{d.sel}}" onClick="{{d.pick}}" style="{{d.style}}">{{d.label}}</button>
-</sc-for>
-</div>
-<div style="border-top: 1px solid rgba(238,234,226,.14)">
-<sc-for list="{{sessions}}" as="s" hint-placeholder-count="8">
-<div style="display: grid; grid-template-columns: 96px 12px minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 18px 4px; border-bottom: 1px solid rgba(238,234,226,.1)">
-<span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 20px; font-variant-numeric: tabular-nums">{{s.h}}</span>
-<span style="{{s.dot}}"></span>
-<span><span style="font-weight: 600">{{s.n}}</span><span style="color: #A8A8A0; font-size: 14px"> · {{s.note}}</span></span>
-<span style="font-size: 13px; color: #A8A8A0">{{s.d}}</span>
-</div>
-</sc-for>
-</div>
-<p style="margin: 16px 0 0; font-size: 13px; color: #8E8E86">Horario orientativo de maqueta — sustituir por el horario real del box.</p>
+<div class="hz-scroll"><table class="hz-table"><caption class="sr-only">Horario de invierno semanal</caption><thead><tr><th scope="col"><span class="sr-only">Hora</span></th><th scope="col">Lun</th><th scope="col">Mar</th><th scope="col">Mié</th><th scope="col">Jue</th><th scope="col">Vie</th><th scope="col">Sáb</th><th scope="col">Dom</th></tr></thead><tbody><tr><th scope="row" class="hz-time">07:00</th><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">07:30</th><td></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">08:30</th><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">09:00</th><td></td><td></td><td></td><td></td><td></td><td><span class="hz-cls" data-class="Entrena con tu Amig@">Entrena con tu Amig@</span></td><td></td></tr><tr><th scope="row" class="hz-time">09:30</th><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">10:30</th><td></td><td><span class="hz-cls" data-class="Wom_Ray (embarazadas)">Wom_Ray (embarazadas)</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">13:00</th><td></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">16:00</th><td></td><td></td><td></td><td></td><td><span class="hz-cls" data-class="Wom_Ray (embarazadas)">Wom_Ray (embarazadas)</span></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">17:00</th><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Kids">Kids</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Kids">Kids</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">18:00</th><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">19:00</th><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td></tr><tr><th scope="row" class="hz-time">20:00</th><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td><span class="hz-cls" data-class="Funcional">Funcional</span></td><td></td><td></td></tr></tbody></table></div>
 </div>
 <aside style="background: #0C0D0C; border: 1px solid rgba(238,234,226,.12); padding: 32px; display: flex; flex-direction: column; gap: 20px">
 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FEBD59" stroke-width="1.5" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M10 18h4"></path></svg>
 <h3 style="margin: 0; font-size: 22px; font-weight: 600">Reserva desde la app</h3>
-<p style="margin: 0; color: #A8A8A0; font-size: 15px">Apúntate a tu clase, consulta el WOD del día y registra tus marcas desde [AimHarder / WodBuster].</p>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">Apúntate a tu clase, consulta el WOD del día y registra tus marcas desde WodBuster.</p>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #C9C6BE">
 <li>— Reserva hasta [7 días] antes</li>
 <li>— Cancela sin coste hasta [2 h] antes</li>
@@ -347,6 +344,27 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 </div>
 </div>
 </section>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.hz-btn');
+  var cells = document.querySelectorAll('.hz-cls');
+  function apply() {
+    var sel = [];
+    btns.forEach(function (b) { if (b.getAttribute('aria-pressed') === 'true') sel.push(b.getAttribute('data-filter')); });
+    cells.forEach(function (c) {
+      var hit = sel.indexOf(c.getAttribute('data-class')) > -1;
+      c.classList.toggle('is-active', hit);
+      c.classList.toggle('is-dim', sel.length > 0 && !hit);
+    });
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      apply();
+    });
+  });
+})();
+</script>
 
 <!-- TARIFAS -->
 <section id="tarifas" class="a-sec" style="padding-top: 128px; padding-bottom: 128px">
@@ -359,29 +377,29 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 <div class="a-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch">
 <div style="border: 1px solid rgba(238,234,226,.14); padding: 40px 32px; display: flex; flex-direction: column; gap: 24px">
 <div class="a-label" style="color: #A8A8A0">Entrenamiento funcional</div>
-<h3 class="a-disp" style="font-size: 32px">2 días</h3>
-<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">[XX] €</span><span style="color: #A8A8A0">/mes</span></div>
+<h3 class="a-disp" style="font-size: 32px">8 sesiones</h3>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">45,00 €</span><span style="color: #A8A8A0">/mes</span></div>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #C9C6BE; flex-grow: 1">
-<li>✓ 8 clases al mes</li><li>✓ Reserva en app</li><li>✓ Valoración inicial</li>
+<li>✓ 8 clases al mes</li><li>✓ Funcional, Entrena con tu Amig@ y Wom_Ray</li><li>✓ Reserva en app</li>
 </ul>
 <a href="#contacto" class="a-btn a-btn-g" style="justify-content: center">Empezar</a>
 </div>
 <div style="border: 1px solid #FEBD59; background: #161310; padding: 40px 32px; display: flex; flex-direction: column; gap: 24px; position: relative">
 <div style="position: absolute; top: -1px; right: -1px; background: #FEBD59; color: #0C0D0C; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: .14em; padding: 8px 12px">RECOMENDADA</div>
 <div class="a-label" style="color: #FEBD59">Entrenamiento funcional</div>
-<h3 class="a-disp" style="font-size: 32px">3 días</h3>
-<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">[XX] €</span><span style="color: #A8A8A0">/mes</span></div>
+<h3 class="a-disp" style="font-size: 32px">12 sesiones</h3>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">50,00 €</span><span style="color: #A8A8A0">/mes</span></div>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #C9C6BE; flex-grow: 1">
-<li>✓ 12 clases al mes</li><li>✓ Reserva en app</li><li>✓ Valoración y revisión trimestral</li><li>✓ Acceso a Open Box</li>
+<li>✓ 12 clases al mes</li><li>✓ Funcional, Entrena con tu Amig@ y Wom_Ray</li><li>✓ Reserva en app</li>
 </ul>
 <a href="#contacto" class="a-btn a-btn-p" style="justify-content: center">Empezar</a>
 </div>
 <div style="border: 1px solid rgba(238,234,226,.14); padding: 40px 32px; display: flex; flex-direction: column; gap: 24px">
 <div class="a-label" style="color: #A8A8A0">Entrenamiento funcional</div>
 <h3 class="a-disp" style="font-size: 32px">Ilimitado</h3>
-<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">[XX] €</span><span style="color: #A8A8A0">/mes</span></div>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">60,00 €</span><span style="color: #A8A8A0">/mes</span></div>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #C9C6BE; flex-grow: 1">
-<li>✓ Clases ilimitadas</li><li>✓ Open Box sin límite</li><li>✓ Revisión trimestral</li><li>✓ [1] sesión personal al trimestre</li>
+<li>✓ Clases ilimitadas</li><li>✓ Funcional, Entrena con tu Amig@ y Wom_Ray</li><li>✓ Reserva en app</li>
 </ul>
 <a href="#contacto" class="a-btn a-btn-g" style="justify-content: center">Empezar</a>
 </div>
@@ -395,15 +413,14 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 </div>
 <div style="background: #0C0D0C; padding: 28px 32px">
 <div style="font-weight: 600; margin-bottom: 12px">Mamá Sherpa</div>
-<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Embarazo · 2 días/sem</span><span>[XX] €/mes</span></div>
-<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Postparto · 2 días/sem</span><span>[XX] €/mes</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Wom_Ray (embarazadas)</span><span>30,00 €/mes</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Postparto</span><span>[XX] €/mes</span></div>
 </div>
 <div style="background: #0C0D0C; padding: 28px 32px">
 <div style="font-weight: 600; margin-bottom: 12px">Otros</div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Kids · 8 sesiones</span><span>30,00 €/mes</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Drop-in</span><span>1,00 €</span></div>
 <div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Matrícula</span><span>[XX] €</span></div>
-<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Clase suelta</span><span>[XX] €</span></div>
-<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Drop-in visitantes</span><span>[XX] €</span></div>
-<div style="display: flex; justify-content: space-between; font-size: 15px; color: #C9C6BE; padding: 6px 0"><span>Valoración nutricional</span><span>[XX] €</span></div>
 </div>
 </div>
 </div>
@@ -414,12 +431,7 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 <div class="a-wrap">
 <div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">09 — Tus guías</div>
 <h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px); margin-bottom: 56px">El equipo</h2>
-<div class="a-g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
-<div style="display: flex; flex-direction: column; gap: 14px"><div class="a-ph" style="aspect-ratio: 3 / 4">Retrato coach<br>fondo neutro, B/N</div><div><div style="font-weight: 600">[Nombre Apellido]</div><div style="font-size: 14px; color: #A8A8A0">Head Coach · [Titulación]</div></div></div>
-<div style="display: flex; flex-direction: column; gap: 14px"><div class="a-ph" style="aspect-ratio: 3 / 4">Retrato coach<br>fondo neutro, B/N</div><div><div style="font-weight: 600">[Nombre Apellido]</div><div style="font-size: 14px; color: #A8A8A0">Coach · Entrenamiento personal</div></div></div>
-<div style="display: flex; flex-direction: column; gap: 14px"><div class="a-ph" style="aspect-ratio: 3 / 4">Retrato coach<br>fondo neutro, B/N</div><div><div style="font-weight: 600">[Nombre Apellido]</div><div style="font-size: 14px; color: #A8A8A0">Especialista pre y postparto</div></div></div>
-<div style="display: flex; flex-direction: column; gap: 14px"><div class="a-ph" style="aspect-ratio: 3 / 4">Retrato coach<br>fondo neutro, B/N</div><div><div style="font-weight: 600">[Nombre Apellido]</div><div style="font-size: 14px; color: #A8A8A0">Especialista en nutrición</div></div></div>
-</div>
+<div class="a-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px"><img src="../assets/coaches/antonio-salguero.jpg" alt="Foto de Antonio Salguero" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><figcaption style="font-weight: 600; font-size: 18px">Antonio Salguero</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px"><img src="../assets/coaches/marievap3085.jpg" alt="Foto de marievap3085" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><figcaption style="font-weight: 600; font-size: 18px">marievap3085</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px"><img src="../assets/coaches/dunia.jpg" alt="Foto de Dunia" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><figcaption style="font-weight: 600; font-size: 18px">Dunia</figcaption></figure></div>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; margin-top: 112px; margin-bottom: 40px">
 <h2 class="a-disp" style="font-size: clamp(32px, 3.6vw, 52px)">Lo dice la tribu</h2>
@@ -515,32 +527,8 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 class Component extends DCLogic {
   renderVals() {
     var st = this.state || {};
-    var day = st.day == null ? 0 : st.day;
     var faq = st.faq == null ? 0 : st.faq;
     var self = this;
-    var C = { cf: "#FEBD59", mama: "#E6C9A8", open: "#8E8E86" };
-    var cf = function (h, note) { return { h: h, n: "Entrenamiento funcional", note: note || "Técnica + WOD", d: "60 min", t: "cf" }; };
-    var week = [
-      [cf("07:00"), cf("08:00"), cf("09:30"), { h: "11:00", n: "Postparto", note: "Con bebé en sala", d: "50 min", t: "mama" }, cf("13:30"), cf("17:30"), cf("18:30"), cf("19:30"), cf("20:30")],
-      [cf("07:00"), cf("08:00"), cf("09:30"), { h: "10:30", n: "Embarazo activo", note: "Grupo reducido", d: "50 min", t: "mama" }, cf("13:30"), cf("17:30"), { h: "18:30", n: "Embarazo activo", note: "Grupo de tarde", d: "50 min", t: "mama" }, cf("19:30"), cf("20:30")],
-      [cf("07:00"), cf("08:00"), cf("09:30"), { h: "11:00", n: "Postparto", note: "Con bebé en sala", d: "50 min", t: "mama" }, cf("13:30"), cf("17:30"), cf("18:30"), cf("19:30"), cf("20:30")],
-      [cf("07:00"), cf("08:00"), cf("09:30"), { h: "10:30", n: "Embarazo activo", note: "Grupo reducido", d: "50 min", t: "mama" }, cf("13:30"), cf("17:30"), cf("18:30"), { h: "19:30", n: "Postparto", note: "Con bebé en sala", d: "50 min", t: "mama" }, cf("20:30")],
-      [cf("07:00"), cf("08:00"), cf("09:30"), cf("13:30"), cf("17:30"), cf("18:30"), { h: "19:30", n: "Open Box", note: "Entreno libre supervisado", d: "90 min", t: "open" }],
-      [cf("10:00", "Team WOD por parejas"), { h: "11:00", n: "Postparto", note: "Con bebé en sala", d: "50 min", t: "mama" }, { h: "11:30", n: "Open Box", note: "Entreno libre supervisado", d: "90 min", t: "open" }]
-    ];
-    var labels = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-    var days = labels.map(function (l, i) {
-      var on = i === day;
-      return {
-        label: l,
-        sel: on ? "true" : "false",
-        pick: function () { self.setState({ day: i }); },
-        style: "min-height: 44px; padding: 0 20px; border-radius: 2px; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; " + (on ? "background: #FEBD59; color: #0C0D0C; border: 1px solid #FEBD59;" : "background: transparent; color: #EEEAE2; border: 1px solid rgba(238,234,226,.25);")
-      };
-    });
-    var sessions = week[day].map(function (s) {
-      return { h: s.h, n: s.n, note: s.note, d: s.d, dot: "width: 10px; height: 10px; display: block; background: " + C[s.t] + ";" };
-    });
     var qs = [
       ["¿Necesito experiencia previa para entrenar con vosotros?", "No. Empiezas con una valoración y unas sesiones de fundamentos. Después, cada clase se escala a tu nivel: mismas ganas, distinta carga."],
       ["¿Puedo entrenar estando embarazada?", "Sí, con la autorización de tu matrona o ginecólogo. Adaptamos cada sesión al trimestre y a cómo te encuentras ese día."],
@@ -553,7 +541,7 @@ class Component extends DCLogic {
       var open = i === faq;
       return { q: q[0], a: q[1], open: open, sign: open ? "−" : "+", toggle: function () { self.setState({ faq: open ? -1 : i }); } };
     });
-    return { days: days, sessions: sessions, faqs: faqs };
+    return { faqs: faqs };
   }
 }
 </script>
