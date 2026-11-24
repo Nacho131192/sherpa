@@ -60,7 +60,7 @@ def rgb_hex(c):
     return f"#{r:02x}{g:02x}{b:02x}"
 
 
-def build_svg(selected, name):
+def build_svg(selected, name, fill_override=None):
     if not selected:
         sys.exit(f"ABORT: no drawings selected for {name}")
     bb = pymupdf.Rect()
@@ -77,10 +77,10 @@ def build_svg(selected, name):
         d = drawing_path(dr)
         if not d:
             continue
-        fill = rgb_hex(dr.get("fill"))
+        fill = fill_override or rgb_hex(dr.get("fill"))
         rule = ' fill-rule="evenodd"' if dr.get("even_odd") else ""
         attrs = f' fill="{fill}"' if fill else ' fill="none"'
-        stroke = rgb_hex(dr.get("color"))
+        stroke = fill_override or rgb_hex(dr.get("color"))
         if stroke and not fill:
             attrs = f' fill="none" stroke="{stroke}" stroke-width="{fmt(dr.get("width") or 1)}"'
         out.append(f'<path d="{d}"{attrs}{rule}/>')
@@ -101,3 +101,4 @@ print("dropped (franja inferior):", len(dropped), "rects:", [tuple(round(v) for 
 
 build_svg(mountain, "sherpa-mountain")
 build_svg(letters, "sherpa-wordmark")
+build_svg(mountain + letters + tagline, "sherpa-full", fill_override="#EEEAE2")
