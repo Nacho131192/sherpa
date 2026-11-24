@@ -299,25 +299,20 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 
 <!-- HORARIOS -->
 <style>
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.hz-btn,.hz-tab{min-height:44px;padding:0 16px;border-radius:2px;cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:#EEEAE2;border:1px solid rgba(238,234,226,.25)}
-.hz-btn[aria-pressed="true"],.hz-tab[aria-selected="true"]{background:#FEBD59;color:#0C0D0C;border-color:#FEBD59}
 .hz-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.hz-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:0;padding-bottom:20px;border-bottom:1px solid rgba(238,234,226,.14)}
-.hz-list{border-bottom:1px solid rgba(238,234,226,.1)}
-.hz-row{display:flex;align-items:center;gap:28px;padding:20px 8px;border-top:1px solid rgba(238,234,226,.1);transition:opacity .2s ease,background-color .2s ease}
-.hz-time{font-family:'Archivo',sans-serif;font-weight:800;font-size:26px;font-variant-numeric:tabular-nums;min-width:96px}
-.hz-name{display:flex;align-items:center;gap:12px;font-size:17px;font-weight:600}
-.hz-dot{width:10px;height:10px;background:#6F6F68;flex-shrink:0}
-.hz-row[data-class="Funcional"] .hz-dot{background:#FEBD59}
-.hz-row[data-class="Kids"] .hz-dot{background:#EEEAE2}
-.hz-row[data-class="Entrena con tu Amig@"] .hz-dot{background:#8E8E86}
-.hz-row[data-class="Wom_Ray (embarazadas)"] .hz-dot{background:#E6C9A8}
-.hz-row.is-active{background:rgba(254,189,89,.12);box-shadow:inset 3px 0 0 #FEBD59}
-.hz-row.is-dim{opacity:.28}
-.hz-empty{margin:0;padding:32px 8px;color:#A8A8A0}
-.hz-panel[hidden]{display:none}
-@media (max-width:640px){.hz-time{font-size:20px;min-width:72px}.hz-name{font-size:15px}}
+.hz-btn{min-height:44px;padding:0 16px;border-radius:2px;cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:#EEEAE2;border:1px solid rgba(238,234,226,.25)}
+.hz-btn[aria-pressed="true"]{background:#FEBD59;color:#0C0D0C;border-color:#FEBD59}
+.hz-scroll{overflow-x:auto;padding-bottom:8px}
+.hz-week{display:grid;grid-template-columns:84px repeat(7,minmax(128px,1fr));gap:8px;min-width:1000px}
+.hz-dayhead{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#A8A8A0;padding:0 4px 14px;border-bottom:1px solid rgba(238,234,226,.14)}
+.hz-time{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums;color:#EEEAE2;padding-top:12px}
+.hz-cell{min-height:58px;border-top:1px solid rgba(238,234,226,.06);padding-top:6px}
+.hz-card{display:block;height:100%;box-sizing:border-box;padding:9px 10px;font-size:13px;font-weight:600;line-height:1.25;color:#EEEAE2;background:rgba(238,234,226,.05);border-left:3px solid #FEBD59;transition:opacity .2s ease,background-color .2s ease,color .2s ease}
+.hz-card[data-class="Kids"]{border-left-color:#EEEAE2}
+.hz-card[data-class="Entrena con tu Amig@"]{border-left-color:#8E8E86}
+.hz-card[data-class="Wom_Ray (embarazadas)"]{border-left-color:#E6C9A8}
+.hz-card.is-active{background:#FEBD59;color:#0C0D0C}
+.hz-card.is-dim{opacity:.22}
 </style>
 <section id="horarios" class="a-sec" style="padding-top: 128px; padding-bottom: 128px; background: #121412; border-top: 1px solid rgba(238,234,226,.08); border-bottom: 1px solid rgba(238,234,226,.08)">
 <div class="a-wrap">
@@ -326,69 +321,35 @@ a{color:#EEEAE2}a:hover{color:#FEBD59}
 <div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">07 — Horarios</div>
 <h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Tu hora, tu clase</h2>
 </div>
-<p style="margin: 0; max-width: 380px; color: #A8A8A0">Horario de invierno. Pulsa una clase para ver sus sesiones resaltadas en la semana.</p>
+<p style="margin: 0; max-width: 380px; color: #A8A8A0">Horario de invierno. Pulsa una clase para resaltar sus sesiones en la semana.</p>
 </div>
 <div class="hz-filters" role="group" aria-label="Filtrar por clase">
 <button type="button" class="hz-btn" data-filter="Funcional" aria-pressed="false">Funcional</button><button type="button" class="hz-btn" data-filter="Entrena con tu Amig@" aria-pressed="false">Entrena con tu Amig@</button><button type="button" class="hz-btn" data-filter="Kids" aria-pressed="false">Kids</button><button type="button" class="hz-btn" data-filter="Wom_Ray (embarazadas)" aria-pressed="false">Wom_Ray (embarazadas)</button>
 </div>
-<div class="a-g2" style="display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 40px; align-items: start">
-<div>
-<div class="hz-tabs" role="tablist" aria-label="Día de la semana">
-<button type="button" role="tab" class="hz-tab" data-day="0" aria-selected="true">Lun</button><button type="button" role="tab" class="hz-tab" data-day="1" aria-selected="false">Mar</button><button type="button" role="tab" class="hz-tab" data-day="2" aria-selected="false">Mié</button><button type="button" role="tab" class="hz-tab" data-day="3" aria-selected="false">Jue</button><button type="button" role="tab" class="hz-tab" data-day="4" aria-selected="false">Vie</button><button type="button" role="tab" class="hz-tab" data-day="5" aria-selected="false">Sáb</button><button type="button" role="tab" class="hz-tab" data-day="6" aria-selected="false">Dom</button>
-</div>
-<div class="hz-panel" role="tabpanel" data-day="0"><div class="hz-list"><div class="hz-row" data-class="Funcional"><span class="hz-time">07:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">08:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">09:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">17:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">18:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">19:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">20:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div></div></div><div class="hz-panel" role="tabpanel" data-day="1" hidden><div class="hz-list"><div class="hz-row" data-class="Funcional"><span class="hz-time">07:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">08:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Wom_Ray (embarazadas)"><span class="hz-time">10:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Wom_Ray (embarazadas)</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">13:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Kids"><span class="hz-time">17:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Kids</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">18:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">19:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">20:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div></div></div><div class="hz-panel" role="tabpanel" data-day="2" hidden><div class="hz-list"><div class="hz-row" data-class="Funcional"><span class="hz-time">07:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">08:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">09:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">17:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">18:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">19:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">20:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div></div></div><div class="hz-panel" role="tabpanel" data-day="3" hidden><div class="hz-list"><div class="hz-row" data-class="Funcional"><span class="hz-time">07:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">08:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Kids"><span class="hz-time">17:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Kids</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">18:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">19:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">20:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div></div></div><div class="hz-panel" role="tabpanel" data-day="4" hidden><div class="hz-list"><div class="hz-row" data-class="Funcional"><span class="hz-time">07:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">08:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">09:30</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">13:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Wom_Ray (embarazadas)"><span class="hz-time">16:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Wom_Ray (embarazadas)</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">17:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">18:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">19:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div><div class="hz-row" data-class="Funcional"><span class="hz-time">20:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Funcional</span></div></div></div><div class="hz-panel" role="tabpanel" data-day="5" hidden><div class="hz-list"><div class="hz-row" data-class="Entrena con tu Amig@"><span class="hz-time">09:00</span><span class="hz-name"><span class="hz-dot" aria-hidden="true"></span>Entrena con tu Amig@</span></div></div></div><div class="hz-panel" role="tabpanel" data-day="6" hidden><p class="hz-empty">Hoy no hay clases programadas.</p></div>
-</div>
-<aside style="background: #0C0D0C; border: 1px solid rgba(238,234,226,.12); padding: 32px; display: flex; flex-direction: column; gap: 20px">
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FEBD59" stroke-width="1.5" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M10 18h4"></path></svg>
-<h3 style="margin: 0; font-size: 22px; font-weight: 600">Reserva desde la app</h3>
-<p style="margin: 0; color: #A8A8A0; font-size: 15px">Apúntate a tu clase, consulta el WOD del día y registra tus marcas desde WodBuster.</p>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #C9C6BE">
-<li>— Reserva hasta [7 días] antes</li>
-<li>— Cancela sin coste hasta [2 h] antes</li>
-<li>— Entrenamiento personal: con cita previa</li>
-</ul>
-<div style="display: flex; gap: 8px; flex-wrap: wrap">
-<a href="#" class="a-btn a-btn-g" style="min-height: 44px; padding: 0 16px; font-size: 12px">App Store</a>
-<a href="#" class="a-btn a-btn-g" style="min-height: 44px; padding: 0 16px; font-size: 12px">Google Play</a>
-</div>
-</aside>
+<div class="hz-scroll">
+<div class="hz-week" role="table" aria-label="Horario de invierno semanal"><div class="hz-corner" aria-hidden="true"></div><div class="hz-dayhead" role="columnheader">Lunes</div><div class="hz-dayhead" role="columnheader">Martes</div><div class="hz-dayhead" role="columnheader">Miércoles</div><div class="hz-dayhead" role="columnheader">Jueves</div><div class="hz-dayhead" role="columnheader">Viernes</div><div class="hz-dayhead" role="columnheader">Sábado</div><div class="hz-dayhead" role="columnheader">Domingo</div><div class="hz-time" role="rowheader">07:00</div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">07:30</div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">08:30</div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">09:00</div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Entrena con tu Amig@">Entrena con tu Amig@</span></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">09:30</div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">10:30</div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Wom_Ray (embarazadas)">Wom_Ray (embarazadas)</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">13:00</div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">16:00</div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-cell"><span class="hz-card" data-class="Wom_Ray (embarazadas)">Wom_Ray (embarazadas)</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">17:00</div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Kids">Kids</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Kids">Kids</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">18:00</div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">19:00</div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div><div class="hz-time" role="rowheader">20:00</div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"><span class="hz-card" data-class="Funcional">Funcional</span></div><div class="hz-cell"></div><div class="hz-cell"></div></div>
 </div>
 </div>
 </section>
 <script>
 (function () {
-  var tabs = document.querySelectorAll('.hz-tab');
-  var panels = document.querySelectorAll('.hz-panel');
   var filters = document.querySelectorAll('.hz-btn');
-  var rows = document.querySelectorAll('.hz-row');
-
-  function showDay(i) {
-    tabs.forEach(function (t) { t.setAttribute('aria-selected', String(Number(t.getAttribute('data-day')) === i)); });
-    panels.forEach(function (p) { p.hidden = Number(p.getAttribute('data-day')) !== i; });
-  }
-  function applyFilter() {
+  var cards = document.querySelectorAll('.hz-card');
+  function apply() {
     var sel = [];
     filters.forEach(function (b) { if (b.getAttribute('aria-pressed') === 'true') sel.push(b.getAttribute('data-filter')); });
-    rows.forEach(function (r) {
-      var hit = sel.indexOf(r.getAttribute('data-class')) > -1;
-      r.classList.toggle('is-active', hit);
-      r.classList.toggle('is-dim', sel.length > 0 && !hit);
+    cards.forEach(function (c) {
+      var hit = sel.indexOf(c.getAttribute('data-class')) > -1;
+      c.classList.toggle('is-active', hit);
+      c.classList.toggle('is-dim', sel.length > 0 && !hit);
     });
   }
-
-  tabs.forEach(function (t) {
-    t.addEventListener('click', function () { showDay(Number(t.getAttribute('data-day'))); });
-  });
   filters.forEach(function (b) {
     b.addEventListener('click', function () {
       b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-      applyFilter();
+      apply();
     });
   });
-
-  // Abre el día de hoy (lunes = 0 … domingo = 6)
-  var today = (new Date().getDay() + 6) % 7;
-  showDay(today);
 })();
 </script>
 
