@@ -61,6 +61,7 @@ img,svg{max-width:100%}
 .a-g2{gap:40px!important}
 .a-sec h2.a-disp{font-size:clamp(32px,9vw,56px)!important}
 .a-why>div:last-child{grid-column:auto!important}
+.a-age>div{padding:28px 20px!important;gap:14px!important}
 footer .a-g4{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:32px 24px!important}
 footer .a-g4>div:first-child{grid-column:1/-1}
 footer a{display:inline-block;padding:11px 0}
@@ -73,24 +74,24 @@ footer a{display:inline-block;padding:11px 0}
 @media (max-width:600px){
 .a-tri-end{display:inline}
 .a-hdr-brand>span{gap:8px!important}
-.a-hdr-brand img:first-child{height:22px!important}
-.a-hdr-brand img:last-child{height:12px!important}
-.a-hdr-cta{padding:0 10px!important;font-size:11px!important;letter-spacing:.04em!important;white-space:nowrap}
+.a-hdr-brand img:first-child{height:18px!important}
+.a-hdr-brand img:last-child{height:14px!important}
+.a-hdr-cta{padding:0 8px!important;font-size:10.5px!important;letter-spacing:.03em!important;white-space:nowrap}
 .a-hdr-brand{flex-shrink:0}
-.a-why>div,#nutricion .a-g3>div{min-height:0!important;padding:20px 18px!important;gap:6px 16px!important}
+.a-why>div,#nutricion .a-g3>div,#oncologico .a-g3>div{min-height:0!important;padding:20px 18px!important;gap:6px 16px!important}
 .a-why>div{display:grid!important;grid-template-columns:28px minmax(0,1fr);align-items:start}
 .a-why>div>svg{grid-row:1 / 3;width:26px;height:26px}
 .a-why>div>h3,.a-why>div>p{grid-column:2}
-.a-why h3,#nutricion .a-g3 h3{font-size:17px!important}
-.a-why p,#nutricion .a-g3 p{font-size:14px!important;line-height:1.5}
-#nutricion .a-g3>div>span:first-child{font-size:14px}
+.a-why h3,#nutricion .a-g3 h3,#oncologico .a-g3 h3{font-size:17px!important}
+.a-why p,#nutricion .a-g3 p,#oncologico .a-g3 p{font-size:14px!important;line-height:1.5}
+#nutricion .a-g3>div>span:first-child,#oncologico .a-g3>div>span:first-child{font-size:14px}
 .a-row>.a-disp{font-size:22px!important}
 .a-btn{width:100%;justify-content:center}
 .a-hdr .a-btn{width:auto}
 .a-label{font-size:11px;letter-spacing:.12em}
 .hz-btn{flex:1 1 auto}
 }
-@media (max-width:359px){
+@media (max-width:371px){
 .a-hdr-cta{display:none!important}
 }
 </style>
@@ -124,6 +125,8 @@ footer a{display:inline-block;padding:11px 0}
 <a href="#servicios">Servicios</a>
 <a href="#mama">Mamá Sherpa</a>
 <a href="#nutricion">Nutrición</a>
+<a href="#oncologico">Oncológico</a>
+<a href="#ninos-mayores">Niños y mayores</a>
 <a href="#horarios">Horarios</a>
 <a href="#tarifas">Tarifas</a>
 <a href="#faq">FAQ</a>
@@ -373,10 +376,65 @@ footer a{display:inline-block;padding:11px 0}
 </div>
 </section>
 
+<!-- ENTRENAMIENTO ONCOLÓGICO -->
+<section id="oncologico" class="a-sec" style="background: #EEEAE2; color: #141513; padding-top: 128px; padding-bottom: 128px">
+<div class="a-wrap">
+<div class="a-label" style="color: #8A3A14; margin-bottom: 20px">06 — 5.500 m · Entrenamiento oncológico</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Fuerza en cada fase del proceso</h2>
+<p style="margin: 20px 0 48px; max-width: 560px; color: #3D3E3A; font-size: 18px">Ejercicio adaptado para personas en proceso oncológico y con otras patologías. Siempre con autorización médica y coordinado con tu equipo de salud.</p>
+<div class="a-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(20,21,19,.16); border: 1px solid rgba(20,21,19,.16)">
+<div style="background: #E6E1D7; padding: 36px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 260px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #8A3A14">01</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Valoración inicial</h3>
+<p style="margin: 0; color: #3D3E3A; font-size: 15px">Historial, tratamiento actual, síntomas y objetivos. Partimos de cómo estás hoy, no de cómo deberías estar.</p>
+</div>
+<div style="background: #E6E1D7; padding: 36px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 260px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #8A3A14">02</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Plan adaptado</h3>
+<p style="margin: 0; color: #3D3E3A; font-size: 15px">Sesiones individuales o en grupo muy reducido, con intensidad y ejercicios ajustados a cada día y a cada fase.</p>
+</div>
+<div style="background: #E6E1D7; padding: 36px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 260px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #8A3A14">03</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Seguimiento cercano</h3>
+<p style="margin: 0; color: #3D3E3A; font-size: 15px">Revisamos contigo cómo respondes y ajustamos el plan, en contacto con tu equipo médico si lo autorizas.</p>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px">
+<a href="#contacto" class="a-btn" style="background: #141513; color: #EEEAE2">Consulta sin compromiso</a>
+<a href="#tarifas" class="a-btn" style="background: transparent; color: #141513; border: 1px solid rgba(20,21,19,.4)">Ver precios</a>
+</div>
+</div>
+</section>
+
+<!-- NIÑOS Y MAYORES -->
+<section id="ninos-mayores" class="a-sec" style="padding-top: 128px; padding-bottom: 128px; background: #121412; border-top: 1px solid rgba(238,234,226,.08); border-bottom: 1px solid rgba(238,234,226,.08)">
+<div class="a-wrap">
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">07 — 5.800 m · Niños y mayores</div>
+<h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Para quien empieza y para quien sigue</h2>
+<p style="margin: 20px 0 48px; max-width: 560px; color: #A8A8A0">Dos programas con el mismo método y ritmos muy distintos: uno para que los más pequeños aprendan a moverse y otro para que los mayores ganen fuerza y autonomía.</p>
+<div class="a-g2 a-age" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(238,234,226,.1); border: 1px solid rgba(238,234,226,.1)">
+<div id="ninos" style="background: #0C0D0C; padding: 40px 32px; display: flex; flex-direction: column; gap: 20px">
+<div class="a-label" style="color: #FEBD59">De [X] a [X] años</div>
+<h3 class="a-disp" style="font-size: clamp(28px, 3vw, 40px)">Entrenamiento para niños</h3>
+<p style="margin: 0; color: #A8A8A0">Clases pensadas para su edad, donde el juego es el vehículo: aprenden a moverse bien, a coordinarse y a coger gusto por el deporte.</p>
+<ul style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid rgba(238,234,226,.12)"><li style="display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 12px; align-items: start; padding: 14px 0; border-top: 1px solid rgba(238,234,226,.12); color: #C9C6BE; font-size: 15px"><span style="color: #FEBD59" aria-hidden="true">▲</span><span>Coordinación, agilidad y fuerza básica</span></li><li style="display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 12px; align-items: start; padding: 14px 0; border-top: 1px solid rgba(238,234,226,.12); color: #C9C6BE; font-size: 15px"><span style="color: #FEBD59" aria-hidden="true">▲</span><span>Técnica de movimiento desde pequeños</span></li><li style="display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 12px; align-items: start; padding: 14px 0; border-top: 1px solid rgba(238,234,226,.12); color: #C9C6BE; font-size: 15px"><span style="color: #FEBD59" aria-hidden="true">▲</span><span>Grupos por edad, siempre con coach</span></li></ul>
+<div><a href="#contacto" class="a-btn a-btn-g">Pide información</a></div>
+</div>
+<div id="mayores" style="background: #0C0D0C; padding: 40px 32px; display: flex; flex-direction: column; gap: 20px">
+<div class="a-label" style="color: #FEBD59">Desde [X] años</div>
+<h3 class="a-disp" style="font-size: clamp(28px, 3vw, 40px)">Entrenamiento para mayores</h3>
+<p style="margin: 0; color: #A8A8A0">Sesiones para mantenerte fuerte, estable y autónomo, con ejercicios adaptados a tu punto de partida y a tus posibles molestias.</p>
+<ul style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid rgba(238,234,226,.12)"><li style="display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 12px; align-items: start; padding: 14px 0; border-top: 1px solid rgba(238,234,226,.12); color: #C9C6BE; font-size: 15px"><span style="color: #FEBD59" aria-hidden="true">▲</span><span>Fuerza, equilibrio y movilidad</span></li><li style="display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 12px; align-items: start; padding: 14px 0; border-top: 1px solid rgba(238,234,226,.12); color: #C9C6BE; font-size: 15px"><span style="color: #FEBD59" aria-hidden="true">▲</span><span>Más autonomía en el día a día</span></li><li style="display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 12px; align-items: start; padding: 14px 0; border-top: 1px solid rgba(238,234,226,.12); color: #C9C6BE; font-size: 15px"><span style="color: #FEBD59" aria-hidden="true">▲</span><span>Grupos reducidos y ritmo a tu medida</span></li></ul>
+<div><a href="#contacto" class="a-btn a-btn-g">Pide información</a></div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- PRIMERA VEZ -->
 <section class="a-sec" style="padding-top: 128px; padding-bottom: 128px">
 <div class="a-wrap">
-<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">06 — 6.000 m · Tu primera vez</div>
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">08 — 6.000 m · Tu primera vez</div>
 <h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px); margin-bottom: 56px">Empezar es fácil</h2>
 <div class="a-g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #FEBD59; padding-top: 24px">
@@ -424,7 +482,7 @@ footer a{display:inline-block;padding:11px 0}
 <div class="a-wrap">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px">
 <div>
-<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">07 — Horarios</div>
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">09 — Horarios</div>
 <h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Tu hora, tu clase</h2>
 </div>
 <p style="margin: 0; max-width: 380px; color: #A8A8A0">Horario de invierno. Pulsa una clase para resaltar sus sesiones en la semana.</p>
@@ -476,7 +534,7 @@ footer a{display:inline-block;padding:11px 0}
 <section id="tarifas" class="a-sec" style="padding-top: 128px; padding-bottom: 128px">
 <div class="a-wrap">
 <div style="text-align: center; margin-bottom: 56px; display: flex; flex-direction: column; align-items: center; gap: 20px">
-<div class="a-label" style="color: #A8A8A0">08 — 8.000 m · Tarifas</div>
+<div class="a-label" style="color: #A8A8A0">10 — 8.000 m · Tarifas</div>
 <h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Precios claros. Sin permanencia.</h2>
 <p style="margin: 0; color: #A8A8A0; max-width: 560px">Lo que ves es lo que pagas. Cuota mensual domiciliada, cancelas cuando quieras con [15 días] de preaviso.</p>
 </div>
@@ -535,7 +593,7 @@ footer a{display:inline-block;padding:11px 0}
 <!-- EQUIPO + OPINIONES -->
 <section class="a-sec" style="padding-top: 128px; padding-bottom: 128px; background: #121412; border-top: 1px solid rgba(238,234,226,.08)">
 <div class="a-wrap">
-<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">09 — Tus guías</div>
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">11 — Tus guías</div>
 <h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px); margin-bottom: 56px">El equipo</h2>
 <div class="a-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px"><img src="assets/coaches/antonio-salguero.jpg" alt="Foto de Antonio Salguero" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><figcaption style="font-weight: 600; font-size: 18px">Antonio Salguero</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px"><img src="assets/coaches/marievap3085.jpg" alt="Foto de Cascarilla" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><figcaption style="font-weight: 600; font-size: 18px">Cascarilla</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px"><img src="assets/coaches/dunia.jpg" alt="Foto de Dunia Toledo" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><figcaption style="font-weight: 600; font-size: 18px">Dunia Toledo</figcaption></figure></div>
 
@@ -564,7 +622,7 @@ footer a{display:inline-block;padding:11px 0}
 <section id="faq" class="a-sec" style="padding-top: 128px; padding-bottom: 128px; border-top: 1px solid rgba(238,234,226,.08)">
 <div class="a-wrap a-g2" style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 72px">
 <div>
-<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">10 — Dudas</div>
+<div class="a-label" style="color: #A8A8A0; margin-bottom: 20px">12 — Dudas</div>
 <h2 class="a-disp" style="font-size: clamp(40px, 5vw, 72px)">Preguntas frecuentes</h2>
 </div>
 <div style="border-top: 1px solid rgba(238,234,226,.14)">
