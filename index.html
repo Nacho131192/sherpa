@@ -33,7 +33,8 @@ img,svg{max-width:100%}
 .a-disp{overflow-wrap:break-word}
 .a-tri-end{display:none}
 .a-why>div:last-child{grid-column:span 2}
-.a-menu{display:none;position:static}
+.a-menu{display:block;position:static}
+.a-menu .a-ic-chev{display:none}
 .a-menu summary{list-style:none;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(238,234,226,.25);border-radius:2px;cursor:pointer;color:#EEEAE2}
 .a-menu summary::-webkit-details-marker{display:none}
 .a-menu summary:focus-visible{outline:2px solid #FEBD59;outline-offset:2px}
@@ -42,10 +43,16 @@ img,svg{max-width:100%}
 .a-menu[open] .a-ic-close{display:block}
 .a-menu-panel{position:absolute;left:0;right:0;top:100%;background:#0C0D0C;border-bottom:1px solid rgba(238,234,226,.14);box-shadow:0 24px 40px rgba(0,0,0,.5);display:flex;flex-direction:column;padding:8px 20px 20px;max-height:calc(100vh - 64px);overflow-y:auto}
 .a-menu-panel a{display:flex;align-items:center;min-height:52px;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(238,234,226,.08)}
+@media (min-width:961px){
+.a-menu{order:-1}
+.a-menu .a-ic-open,.a-menu .a-ic-close{display:none!important}
+.a-menu .a-ic-chev{display:block!important;transition:transform .2s ease}
+.a-menu[open] .a-ic-chev{transform:rotate(180deg)}
+.a-menu-panel{left:auto!important;right:max(48px,calc((100vw - 1280px)/2 + 48px))!important;width:280px;padding:8px 20px 12px!important;border:1px solid rgba(238,234,226,.14);border-top:0}
+}
 @media (max-width:960px){
 .a-wrap{padding:0 20px}
 .a-nav-links{display:none!important}
-.a-menu{display:block}
 .a-g2,.a-g3,.a-g4,.a-g5,.a-hero{grid-template-columns:minmax(0,1fr)!important}
 .a-sec{padding-top:72px!important;padding-bottom:72px!important}
 .a-row{grid-template-columns:40px minmax(0,1fr)!important;gap:8px 16px!important;padding:24px 0!important;align-items:start!important}
@@ -121,7 +128,7 @@ footer{padding-bottom:88px!important}
 <div style="display: flex; align-items: center; gap: 12px">
 <a href="#contacto" class="a-btn a-btn-p a-hdr-cta" style="min-height: 44px; padding: 0 20px">Clase de prueba</a>
 <details class="a-menu" id="a-menu">
-<summary aria-label="Menú de navegación"><svg class="a-ic-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="a-ic-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></summary>
+<summary aria-label="Todas las secciones" title="Todas las secciones"><svg class="a-ic-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="a-ic-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg><svg class="a-ic-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></summary>
 <nav class="a-menu-panel" aria-label="Menú móvil">
 <a href="#metodo">Método</a>
 <a href="#servicios">Servicios</a>
@@ -359,7 +366,7 @@ footer{padding-bottom:88px!important}
 <div style="background: #0C0D0C; padding: 36px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 280px">
 <span style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #FEBD59">01</span>
 <h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Valoración nutricional</h3>
-<p style="margin: 0; color: #A8A8A0; font-size: 15px">Historial, objetivos, hábitos y rutina diaria. Partimos de tu realidad, no de una tabla de la pizarra.</p>
+<p style="margin: 0; color: #A8A8A0; font-size: 15px">Revisamos tu historial, tus objetivos, tus hábitos y tu rutina diaria para entender cómo comes hoy y qué necesitas de verdad.</p>
 </div>
 <div style="background: #0C0D0C; padding: 36px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 280px">
 <span style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #FEBD59">02</span>
@@ -515,7 +522,7 @@ footer{padding-bottom:88px!important}
   if (menu) {
     menu.addEventListener('click', function (e) { if (e.target.closest('a')) menu.open = false; });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') menu.open = false; });
-    window.addEventListener('resize', function () { if (window.innerWidth > 960) menu.open = false; });
+    document.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
   }
 })();
 </script>
