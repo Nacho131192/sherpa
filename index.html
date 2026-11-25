@@ -33,6 +33,7 @@ img,svg{max-width:100%}
 .a-disp{overflow-wrap:break-word}
 .a-tri-end{display:none}
 .a-why>div:last-child{grid-column:span 2}
+.a-hdr-tag{font-family:'Archivo',sans-serif;font-weight:600;font-size:13px;letter-spacing:.08em;line-height:1;color:#A8A8A0;white-space:nowrap}
 .a-menu{display:block;position:static}
 .a-menu .a-ic-chev{display:none}
 .a-menu summary{list-style:none;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(238,234,226,.25);border-radius:2px;cursor:pointer;color:#EEEAE2}
@@ -44,6 +45,8 @@ img,svg{max-width:100%}
 .a-menu-panel{position:absolute;left:0;right:0;top:100%;background:#0C0D0C;border-bottom:1px solid rgba(238,234,226,.14);box-shadow:0 24px 40px rgba(0,0,0,.5);display:flex;flex-direction:column;padding:8px 20px 20px;max-height:calc(100vh - 64px);overflow-y:auto}
 .a-menu-panel a{display:flex;align-items:center;min-height:52px;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(238,234,226,.08)}
 @media (min-width:961px){
+.a-hdr-brand img:first-child{height:38px!important}
+.a-hdr-brand img:last-child{height:15px!important}
 .a-menu{order:-1}
 .a-menu .a-ic-open,.a-menu .a-ic-close{display:none!important}
 .a-menu .a-ic-chev{display:block!important;transition:transform .2s ease}
@@ -82,7 +85,9 @@ footer a{display:inline-block;padding:11px 0}
 .a-tri-end{display:inline}
 .a-wa{right:16px!important;bottom:16px!important;width:52px!important;height:52px!important}
 footer{padding-bottom:88px!important}
-.a-hdr-brand>span{gap:8px!important}
+.a-hdr-brand>span:first-child{gap:8px!important}
+.a-hdr-brand{gap:4px!important}
+.a-hdr-tag{font-size:10px;letter-spacing:.03em}
 .a-hdr-brand img:first-child{height:18px!important}
 .a-hdr-brand img:last-child{height:14px!important}
 .a-hdr-cta{padding:0 8px!important;font-size:10.5px!important;letter-spacing:.03em!important;white-space:nowrap}
@@ -110,11 +115,12 @@ footer{padding-bottom:88px!important}
 <!-- NAV -->
 <header style="position: sticky; top: 0; z-index: 20; background: #0C0D0C; border-bottom: 1px solid rgba(238,234,226,.08)">
 <div class="a-wrap a-hdr" style="display: flex; align-items: center; justify-content: space-between; height: 80px; gap: 24px">
-<a href="#top" class="a-hdr-brand" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #EEEAE2" aria-label="Sherpa Programing, inicio">
+<a href="#top" class="a-hdr-brand" style="display: flex; flex-direction: column; align-items: center; gap: 5px; text-decoration: none; color: #EEEAE2" aria-label="Sherpa Programing, centro de entrenamiento, inicio">
 <span style="display: flex; align-items: center; gap: 14px">
 <img src="assets/sherpa-mountain.svg" alt="" aria-hidden="true" style="height: 48px; width: auto; display: block; filter: invert(1)">
 <img src="assets/sherpa-wordmark.svg" alt="Sherpa" style="height: 18px; width: auto; display: block; filter: invert(1)">
 </span>
+<span class="a-hdr-tag">· Centro de entrenamiento ·</span>
 </a>
 <nav class="a-nav-links" style="display: flex; gap: 32px; font-size: 14px" aria-label="Principal">
 <a href="#metodo" style="text-decoration: none">Método</a>
